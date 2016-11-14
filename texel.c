@@ -7,12 +7,15 @@ void	put_xpm_pixel_to_image(t_env *e, t_col *col, int x, int y)
 	e->data[y * e->size + x * (e->bpp / 8) + 2] = col->r;
 }
 
+#include <stdio.h>
 void	get_xpm_pixel(t_env *e, t_col *col, int x, int y)
 {
+//	x = 64 - y;
 	if (x > 64)
 		x = x % 64;
 	if (y > 64)
 		y = y % 64;
+//	printf("x:%d\n", x);
 	col->b = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
 			+ e->tex_tab[e->tex_id].bpp / 8 * x)];
 	col->g = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size

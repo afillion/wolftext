@@ -102,6 +102,7 @@ typedef struct	s_env
 	int			texnum;
 	int			tex_width;
 	int			tex_x;
+	int			tex_y;
 	double		wall_x;
 	int			tex_id;
 }				t_env;

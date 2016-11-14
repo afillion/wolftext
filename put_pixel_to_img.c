@@ -1,4 +1,5 @@
 #include "wolf.h"
+#include <stdio.h>
 
 void	put_pixel_to_img(t_env *e, double x, double y)
 {
@@ -16,28 +17,29 @@ void	color(t_env *e, double y)
 
 	y = 1;
 	//e->color = 0xFFFFFF;
+//printf("e->tex_x:%d\n", e->tex_x);
 	if (e->world_map[e->map_x][e->map_y] == 1)
 	{
 		e->tex_id = 1;
-		get_xpm_pixel(e, &col, e->x, e->y);
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}
 	if (e->world_map[e->map_x][e->map_y] == 2)
 	{
 		e->tex_id = 2;
-		get_xpm_pixel(e, &col, e->x, e->y);
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}
 	if (e->world_map[e->map_x][e->map_y] == 3)
 	{
 		e->tex_id = 3;
-		get_xpm_pixel(e, &col, e->x, e->y);
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}
 	if (e->world_map[e->map_x][e->map_y] == 4)
 	{
 		e->tex_id = 4;
-		get_xpm_pixel(e, &col, e->x, e->y);
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}
 //	if (e->side == 1)
