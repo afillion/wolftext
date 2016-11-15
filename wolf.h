@@ -42,9 +42,6 @@ typedef struct	s_env
 	void		*mlx;
 	void		*win;
 	void		*img;
-	void		*img2;
-	void		*img3;
-	void		*img4;
 	char		*data;
 	double		pos_x;
 	double		pos_y;
@@ -99,12 +96,20 @@ typedef struct	s_env
 	int			buffer[MAP_H][MAP_W];
 	int			lenght;
 	int			width;
-	int			texnum;
-	int			tex_width;
 	int			tex_x;
 	int			tex_y;
 	double		wall_x;
 	int			tex_id;
+	double		floor_wall_x;
+	double		floor_wall_y;
+	double		weight;
+	double		current_floor_x;
+	double		current_floor_y;
+	int			floor_tex_x;
+	int			floor_tex_y;
+	double		d_wall;
+	double		d_player;
+	double		current_d;
 }				t_env;
 
 void			ray_cast(t_env *e);
@@ -133,5 +138,6 @@ void			put_xpm_pixel_to_image(t_env *e, t_col *col, int x, int y);
 void			get_xpm_pixel(t_env *e, t_col *col, int x, int y);
 int				load_texture(t_env *e, t_tex *image, char *file);
 int				tex_init(t_env *e);
+void			ft_floor(t_env *e);
 
 #endif

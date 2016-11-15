@@ -20,6 +20,7 @@ SRC = main.c \
 	  algo.c \
 	  init.c \
 	  texel.c \
+	  floor.c \
 
 OBJ = $(SRC:.c=.o)
 

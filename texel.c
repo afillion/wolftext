@@ -9,10 +9,10 @@ void	put_xpm_pixel_to_image(t_env *e, t_col *col, int x, int y)
 
 void	get_xpm_pixel(t_env *e, t_col *col, int x, int y)
 {
-	if (x > 64)
-		x = x % 64;
-	if (y > 64)
-		y = y % 64;
+//	if (x > 64)
+//		x = x % 64;
+//	if (y > 64)
+//		y = y % 64;
 	col->b = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
 			+ e->tex_tab[e->tex_id].bpp / 8 * x)];
 	col->g = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
@@ -57,7 +57,7 @@ void	texel(t_env *e)
 	e->wall_x -= floor((e->wall_x));
 	e->tex_x = (int)(e->wall_x * 64);
 	if (e->side == 0 && e->ray_dir_x > 0)
-		e->tex_x = e->tex_width - e->tex_x - 1;
+		e->tex_x = 64 - e->tex_x - 1;
 	if (e->side == 1 && e->ray_dir_y < 0)
-		e->tex_x = e->tex_width - e->tex_x - 1;
+		e->tex_x = 64 - e->tex_x - 1;
 }
