@@ -1,6 +1,5 @@
 #include "wolf.h"
 #include "fcntl.h"
-#include <stdlib.h>
 
 int		count_word(const char *s, char c)
 {

@@ -5,7 +5,7 @@
 # include <math.h>
 # include "libft/includes/libft.h"
 # include "libft/includes/get_next_line.h"
-# define MAP_W 900
+# define MAP_W 1000
 # define MAP_H 700
 # define TEX_WIDTH 64
 # define TEX_HEIGHT 64
@@ -41,6 +41,7 @@ typedef struct	s_env
 	double		x;
 	double		y;
 	struct s_texture	tex_tab[20];
+	struct s_texture	skybox;
 	void		*mlx;
 	void		*win;
 	void		*img;
