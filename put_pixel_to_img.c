@@ -17,7 +17,6 @@ void	color(t_env *e, double y)
 
 	y = 1;
 	//e->color = 0xFFFFFF;
-//printf("e->tex_x:%d\n", e->tex_x);
 	if (e->world_map[e->map_x][e->map_y] == 1)
 	{
 		e->tex_id = 1;
@@ -39,6 +38,12 @@ void	color(t_env *e, double y)
 	if (e->world_map[e->map_x][e->map_y] == 4)
 	{
 		e->tex_id = 4;
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
+		put_xpm_pixel_to_image(e, &col, e->x, e->y);
+	}
+	if (e->world_map[e->map_x][e->map_y] == 5)
+	{
+		e->tex_id = 5;
 		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}

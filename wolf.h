@@ -38,7 +38,7 @@ typedef struct	s_env
 {
 	double		x;
 	double		y;
-	struct s_texture	tex_tab[6];
+	struct s_texture	tex_tab[10];
 	void		*mlx;
 	void		*win;
 	void		*img;

@@ -7,15 +7,12 @@ void	put_xpm_pixel_to_image(t_env *e, t_col *col, int x, int y)
 	e->data[y * e->size + x * (e->bpp / 8) + 2] = col->r;
 }
 
-#include <stdio.h>
 void	get_xpm_pixel(t_env *e, t_col *col, int x, int y)
 {
-//	x = 64 - y;
 	if (x > 64)
 		x = x % 64;
 	if (y > 64)
 		y = y % 64;
-//	printf("x:%d\n", x);
 	col->b = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
 			+ e->tex_tab[e->tex_id].bpp / 8 * x)];
 	col->g = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
@@ -39,10 +36,28 @@ int		load_texture(t_env *e, t_tex * image, char *file)
 
 int		tex_init(t_env *e)
 {
-	load_texture(e, &e->tex_tab[0], "./Texture/barrel.xpm");
+	load_texture(e, &e->tex_tab[0], "./Texture/grass.xpm");
 	load_texture(e, &e->tex_tab[1], "./Texture/colorstone.xpm");
 	load_texture(e, &e->tex_tab[2], "./Texture/bluestone.xpm");
 	load_texture(e, &e->tex_tab[3], "./Texture/eagle.xpm");
 	load_texture(e, &e->tex_tab[4], "./Texture/greystone.xpm");
+	load_texture(e, &e->tex_tab[5], "./Texture/barrel.xpm");
+	load_texture(e, &e->tex_tab[6], "./Texture/redbrick.xpm");
+	load_texture(e, &e->tex_tab[7], "./Texture/wallbrick.xpm");
+	load_texture(e, &e->tex_tab[8], "./Texture/wood.xpm");
 	return (0);
+}
+
+void	texel(t_env *e)
+{
+	if (e->side == 0)
+		e->wall_x = e->ray_pos_y + e->d_ray * e->ray_dir_y;
+	else
+		e->wall_x = e->ray_pos_x + e->d_ray * e->ray_dir_x;
+	e->wall_x -= floor((e->wall_x));
+	e->tex_x = (int)(e->wall_x * 64);
+	if (e->side == 0 && e->ray_dir_x > 0)
+		e->tex_x = e->tex_width - e->tex_x - 1;
+	if (e->side == 1 && e->ray_dir_y < 0)
+		e->tex_x = e->tex_width - e->tex_x - 1;
 }

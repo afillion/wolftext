@@ -20,7 +20,6 @@ SRC = main.c \
 	  algo.c \
 	  init.c \
 	  texel.c \
-	  textures.c \
 
 OBJ = $(SRC:.c=.o)
 
