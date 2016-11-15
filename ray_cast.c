@@ -3,10 +3,9 @@
 
 void	ray_cast(t_env *e)
 {
-	int	pos;
+	//int	pos;
 	int d;
 	t_col col;
-
 
 	e->x = 0;
 	while (e->x < MAP_W)
@@ -18,15 +17,15 @@ void	ray_cast(t_env *e)
 		dda_algo(e);
 		get_start_end(e);
 		texel(e);
-		while (e->y < e->start)
-		{
-			e->color = 0x00FFFF;
-			pos = (e->x * e->bpp / 8) + (e->y * e->size);
-			e->data[pos] = e->color % 256;
-			e->data[pos + 1] = (e->color >> 8) % 256;
-			e->data[pos + 2] = (e->color >> 16) % 256;
-			e->y++;
-		}
+//		while (e->y < e->start)
+//		{
+//			e->color = 0x00FFFF;
+//			pos = (e->x * e->bpp / 8) + (e->y * e->size);
+//			e->data[pos] = e->color % 256;
+//			e->data[pos + 1] = (e->color >> 8) % 256;
+//			e->data[pos + 2] = (e->color >> 16) % 256;
+//			e->y++;
+//		}
 		while (e->y < e->end)
 		{
 			d = e->y * 256 - MAP_H * 128 + e->height_line * 128;
@@ -49,6 +48,9 @@ void	ray_cast(t_env *e)
 			e->tex_id = 0;
 			get_xpm_pixel(e, &col, e->floor_tex_x, e->floor_tex_y);
 			put_xpm_pixel_to_image(e, &col, e->x, e->y);
+			e->tex_id = 4;
+			get_xpm_pixel(e, &col, e->floor_tex_x, e->floor_tex_y);
+			put_xpm_pixel_to_image(e, &col, e->x, MAP_H - e->y - 1);
 //			e->color = 0xFFCC99;
 //			pos = (e->x * e->bpp / 8) + (e->y * e->size);
 //			e->data[pos] = e->color % 256;
