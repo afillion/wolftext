@@ -9,6 +9,8 @@
 # define MAP_H 700
 # define TEX_WIDTH 64
 # define TEX_HEIGHT 64
+# define SKY_HEIGHT 900
+# define SKY_WIDTH 90
 # define FORWARD 13
 # define LEFT 0
 # define BACKWARD 1
@@ -38,7 +40,7 @@ typedef struct	s_env
 {
 	double		x;
 	double		y;
-	struct s_texture	tex_tab[10];
+	struct s_texture	tex_tab[20];
 	void		*mlx;
 	void		*win;
 	void		*img;
