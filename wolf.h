@@ -5,12 +5,11 @@
 # include <math.h>
 # include "libft/includes/libft.h"
 # include "libft/includes/get_next_line.h"
+# define PI 3.14159265359
 # define MAP_W 1000
-# define MAP_H 700
+# define MAP_H 800
 # define TEX_WIDTH 64
 # define TEX_HEIGHT 64
-# define SKY_HEIGHT 900
-# define SKY_WIDTH 90
 # define FORWARD 13
 # define LEFT 0
 # define BACKWARD 1
@@ -41,7 +40,6 @@ typedef struct	s_env
 	double		x;
 	double		y;
 	struct s_texture	tex_tab[20];
-	struct s_texture	skybox;
 	void		*mlx;
 	void		*win;
 	void		*img;

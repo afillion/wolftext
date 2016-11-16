@@ -26,6 +26,7 @@ void	ray_cast(t_env *e)
 //			e->data[pos + 2] = (e->color >> 16) % 256;
 //			e->y++;
 //		}
+
 		while (e->y < e->end)
 		{
 			d = e->y * 256 - MAP_H * 128 + e->height_line * 128;
@@ -48,7 +49,7 @@ void	ray_cast(t_env *e)
 			e->tex_id = 0;
 			get_xpm_pixel(e, &col, e->floor_tex_x, e->floor_tex_y);
 			put_xpm_pixel_to_image(e, &col, e->x, e->y);
-			e->tex_id = 4;
+			e->tex_id = 9;
 			get_xpm_pixel(e, &col, e->floor_tex_x, e->floor_tex_y);
 			put_xpm_pixel_to_image(e, &col, e->x, MAP_H - e->y - 1);
 //			e->color = 0xFFCC99;
