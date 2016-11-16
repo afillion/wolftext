@@ -33,24 +33,25 @@ int		key_hook(t_env *e)
 
 int		main(int ac, char **av)
 {
-	t_env	e;
+	t_env	*e;
 
-	init_struct(&e);
+	e = (t_env*)malloc(sizeof(t_env));
+	init_struct(e);
 	if (ac == 2)
 	{
-		e.filename = av[1];
-		parse_map(&e);
+		e->filename = av[1];
+		parse_map(e);
 	}
-	init_key(&e);
-	e.mlx = mlx_init();
-	e.win = mlx_new_window(e.mlx, MAP_W, MAP_H, "Wolf3d");
-	e.img = mlx_new_image(e.mlx, MAP_W, MAP_H);
-	e.data = mlx_get_data_addr(e.img, &e.bpp, &e.size, &e.endian);
-	tex_init(&e);
-	mlx_loop_hook(e.mlx, expose, &e);
-//	mlx_expose_hook(e.win, expose, &e);
-	mlx_hook(e.win, 2, (1L << 0), &key_press, &e);
-	mlx_hook(e.win, 3, (1L << 1), &key_release, &e);
-	mlx_loop(e.mlx);
+	init_key(e);
+	e->mlx = mlx_init();
+	e->win = mlx_new_window(e->mlx, MAP_W, MAP_H, "Wolf3d");
+	e->img = mlx_new_image(e->mlx, MAP_W, MAP_H);
+	e->data = mlx_get_data_addr(e->img, &e->bpp, &e->size, &e->endian);
+	tex_init(e);
+	mlx_loop_hook(e->mlx, expose, e);
+//	mlx_expose_hook(e->win, expose, e);
+	mlx_hook(e->win, 2, (1L << 0), &key_press, e);
+	mlx_hook(e->win, 3, (1L << 1), &key_release, e);
+	mlx_loop(e->mlx);
 	return (0);
 }

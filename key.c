@@ -14,8 +14,19 @@ void	init_key(t_env *e)
 
 int		key_press(int keycode, t_env *e)
 {
+	int i;
+
+	i = 0;
 	if (keycode == 53)
+	{
+		while (i < e->line)
+		{
+			free(e->world_map[i]);
+			i++;
+		}
+		free(e->world_map);
 		exit(0);
+	}
 	if (keycode == FORWARD)
 		e->forward = 1;
 	else if (keycode == BACKWARD)
