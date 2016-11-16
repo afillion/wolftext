@@ -34,19 +34,6 @@ int		load_texture(t_env *e, t_tex *image, char *file)
 	return (0);
 }
 
-int		load_skybox(t_env *e, t_tex *image, char *file)
-{
-	int	w;
-	int	h;
-
-	w = SKY_WIDTH;
-	h = SKY_HEIGHT;
-	if (!(image->img = mlx_xpm_file_to_image(e->mlx, file, &w, &h)))
-		return (-1);
-	image->data = mlx_get_data_addr(image->img, &image->bpp, &image->size, &image->endian);
-	return (0);
-}
-
 int		tex_init(t_env *e)
 {
 	load_texture(e, &e->tex_tab[0], "./Texture/grass.xpm");
@@ -59,7 +46,6 @@ int		tex_init(t_env *e)
 	load_texture(e, &e->tex_tab[7], "./Texture/wallbrick.xpm");
 	load_texture(e, &e->tex_tab[8], "./Texture/wood.xpm");
 	load_texture(e, &e->tex_tab[9], "./Texture/bluesky.xpm");
-	load_skybox(e, &e->skybox, "./Texture/xpm_texts/skybox.xpm");
 	return (0);
 }
 
