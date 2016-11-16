@@ -13,6 +13,13 @@ void	get_xpm_pixel(t_env *e, t_col *col, int x, int y)
 //		x = x % 64;
 //	if (y > 64)
 //		y = y % 64;
+	if (e->tex_id == 9)
+	{
+		if (x > 900)
+			x %= 900;
+		if (y > 90)
+			y %= 90;
+	}
 	col->b = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
 			+ e->tex_tab[e->tex_id].bpp / 8 * x)];
 	col->g = e->tex_tab[e->tex_id].data[(y * e->tex_tab[e->tex_id].size
@@ -28,6 +35,11 @@ int		load_texture(t_env *e, t_tex *image, char *file)
 
 	w = TEX_WIDTH;
 	h = TEX_HEIGHT;
+	if (e->tex_id == 9)
+	{
+		h = 900;
+		w = 90;
+	}
 	if (!(image->img = mlx_xpm_file_to_image(e->mlx, file, &w, &h)))
 		return (-1);
 	image->data = mlx_get_data_addr(image->img, &image->bpp, &image->size, &image->endian);
@@ -45,7 +57,7 @@ int		tex_init(t_env *e)
 	load_texture(e, &e->tex_tab[6], "./Texture/redbrick.xpm");
 	load_texture(e, &e->tex_tab[7], "./Texture/wallbrick.xpm");
 	load_texture(e, &e->tex_tab[8], "./Texture/wood.xpm");
-	load_texture(e, &e->tex_tab[9], "./Texture/bluesky.xpm");
+	load_texture(e, &e->tex_tab[9], "./Texture/xpm_texts/skybox.xpm");
 	return (0);
 }
 

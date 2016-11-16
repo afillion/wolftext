@@ -1,5 +1,4 @@
 #include "wolf.h"
-#include <stdio.h>
 
 void	ray_cast(t_env *e)
 {
@@ -49,7 +48,7 @@ void	ray_cast(t_env *e)
 			e->tex_id = 0;
 			get_xpm_pixel(e, &col, e->floor_tex_x, e->floor_tex_y);
 			put_xpm_pixel_to_image(e, &col, e->x, e->y);
-			e->tex_id = 9;
+			e->tex_id = 8;
 			get_xpm_pixel(e, &col, e->floor_tex_x, e->floor_tex_y);
 			put_xpm_pixel_to_image(e, &col, e->x, MAP_H - e->y - 1);
 //			e->color = 0xFFCC99;
