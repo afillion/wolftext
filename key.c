@@ -21,24 +21,24 @@ int		key_press(int keycode, t_env *e)
 	j = 0;
 	if (keycode == 53)
 	{
-		while (i < e->line)
-		{
-			free(e->world_map[i]);
-			i++;
-		}
-		i = 0;
-		while (i <= 10)
-		{
-			j = 0;
-			while (e->tex_tab[i].data[j])
-			{
-				e->tex_tab[i].data[j] = 0;
-				j++;
-			}
-			i++;
-		}
-		free(e->world_map);
-		free(e);
+//		while (i < e->line)
+//		{
+//			free(e->world_map[i]);
+//			i++;
+//		}
+//		i = 0;
+//		while (i <= 10)
+//		{
+//			j = 0;
+//			while (e->tex_tab[i].data[j])
+//			{
+//				e->tex_tab[i].data[j] = 0;
+//				j++;
+//			}
+//			i++;
+//		}
+//		free(e->world_map);
+//		free(e);
 		exit(0);
 	}
 	if (keycode == FORWARD)

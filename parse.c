@@ -45,33 +45,39 @@ void	split_map(t_env *e, char *map)
 {
 	int		i;
 	int		j;
+	int		m;
+	int		f;
 	char	**split;
 	char	**new;
 
+	m = 0;
+	f = 0;
 	i = 0;
 	j = 0;
 	split = ft_strsplit(map, '\n');
+	printf("split ADDR= %p\n", split);
 	e->world_map = (int**)malloc(sizeof(int*) * e->line);
+	m++;
 	while (split[i])
 	{
 		j = 0;
 		e->world_map[i] = (int*)malloc(sizeof(int) * count_word(split[i], ' '));
+		m++;
 		if (e->col < count_word(split[i], ' '))
 			e->col = count_word(split[i], ' ');
 		new = ft_strsplit(split[i], ' ');
 		while (new[j])
 		{
-			printf("new[%d] :[%p]\n", j, new[j]);
+		//	printf("new[%d] :[%p]\n", j, new[j]);
 			e->world_map[i][j] = ft_atoi(new[j]);
 			free(new[j]);
 			j++;
 		}
-		free(new[j]);
-		printf("split[%d] :[%p]\n", i, split[i]);
+		free(new);
+		//printf("split[%d] :[%p]\n", i, split[i]);
 		free(split[i]);
 		i++;
 	}
-	free(new);
 	free(split);
 }
 
