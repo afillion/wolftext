@@ -42,6 +42,7 @@ int		main(int ac, char **av)
 		e->filename = av[1];
 		parse_map(e);
 	}
+	//map(e);
 	init_key(e);
 	e->mlx = mlx_init();
 	e->win = mlx_new_window(e->mlx, MAP_W, MAP_H, "Wolf3d");

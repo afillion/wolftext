@@ -140,5 +140,6 @@ void			get_xpm_pixel(t_env *e, t_col *col, int x, int y);
 int				load_texture(t_env *e, t_tex *image, char *file);
 int				tex_init(t_env *e);
 void			ft_floor(t_env *e);
+void			map(t_env *e);
 
 #endif

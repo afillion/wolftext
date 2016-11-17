@@ -47,6 +47,24 @@ void	color(t_env *e, double y)
 		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}
+	if (e->world_map[e->map_x][e->map_y] == 6)
+	{
+		e->tex_id = 6;
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
+		put_xpm_pixel_to_image(e, &col, e->x, e->y);
+	}
+	if (e->world_map[e->map_x][e->map_y] == 7)
+	{
+		e->tex_id = 7;
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
+		put_xpm_pixel_to_image(e, &col, e->x, e->y);
+	}
+	if (e->world_map[e->map_x][e->map_y] == 8)
+	{
+		e->tex_id = 8;
+		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
+		put_xpm_pixel_to_image(e, &col, e->x, e->y);
+	}
 //	if (e->side == 1)
 //		e->color = e->color / 2;
 //	if (y < e->start)

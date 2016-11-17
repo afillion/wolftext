@@ -11,9 +11,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 LDFLAGS = -L libft -lft -L/usr/local/lib -I/usr/local/include -lmlx -framework OpenGL -framework AppKit
 
 SRC = main.c \
+	  parse.c \
 	  ray_cast.c \
 	  put_pixel_to_img.c \
-	  parse.c \
 	  key.c \
 	  moves.c \
 	  views.c \
@@ -21,6 +21,7 @@ SRC = main.c \
 	  init.c \
 	  texel.c \
 	  floor.c \
+	  map.c
 
 OBJ = $(SRC:.c=.o)
 

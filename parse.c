@@ -61,11 +61,13 @@ void	split_map(t_env *e, char *map)
 		new = ft_strsplit(split[i], ' ');
 		while (new[j])
 		{
-			printf("new[j] :[%p]\n", new[j]);
+			printf("new[%d] :[%p]\n", j, new[j]);
 			e->world_map[i][j] = ft_atoi(new[j]);
 			free(new[j]);
 			j++;
 		}
+		free(new[j]);
+		printf("split[%d] :[%p]\n", i, split[i]);
 		free(split[i]);
 		i++;
 	}
