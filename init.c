@@ -25,6 +25,7 @@ void	init_ray(t_env *e)
 
 void	init_struct(t_env *e)
 {
+	e->teleport = 0;
 	e->textured = 1;
 	e->run = 0;
 	e->pos_x = 20;

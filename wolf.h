@@ -37,6 +37,7 @@ typedef struct s_texture
 
 typedef struct	s_env
 {
+	int			teleport;
 	int			run;
 	int			textured;
 	double		x;
