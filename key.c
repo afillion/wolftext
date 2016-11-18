@@ -12,41 +12,8 @@ void	init_key(t_env *e)
 	e->down = 0;
 }
 
-int		key_press(int keycode, t_env *e)
+void	press(int keycode, t_env *e)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	if (keycode == 53)
-	{
-//		while (i < e->line)
-//		{
-//			free(e->world_map[i]);
-//			i++;
-//		}
-//		i = 0;
-//		while (i <= 10)
-//		{
-//			j = 0;
-//			while (e->tex_tab[i].data[j])
-//			{
-//				e->tex_tab[i].data[j] = 0;
-//				j++;
-//			}
-//			i++;
-//		}
-//		free(e->world_map);
-//		free(e);
-		exit(0);
-	}
-	if (keycode == 18) // 1
-		e->textured = 1;
-	if (keycode == 19) // 2
-		e->textured = 0;
-	if (keycode == 12)
-		e->run = 1;
 	if (keycode == FORWARD)
 		e->forward = 1;
 	else if (keycode == BACKWARD)
@@ -63,6 +30,27 @@ int		key_press(int keycode, t_env *e)
 		e->rrotate = 1;
 	else if (keycode == LROTATE)
 		e->lrotate = 1;
+}
+
+int		key_press(int keycode, t_env *e)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	if (keycode == 53)
+	{
+		free(e);
+		exit(0);
+	}
+	if (keycode == 18)
+		e->textured = 1;
+	if (keycode == 19)
+		e->textured = 0;
+	if (keycode == 12)
+		e->run = 1;
+	press(keycode, e);
 	return (0);
 }
 

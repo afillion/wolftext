@@ -40,7 +40,8 @@ void	dda_algo(t_env *e)
 			e->map_y += e->way_y;
 			e->side = 1;
 		}
-		if (e->world_map[e->map_x][e->map_y] > 0 || e->world_map[e->map_x][e->map_y] == -1)
+		if (e->world_map[e->map_x][e->map_y] > 0 ||
+				e->world_map[e->map_x][e->map_y] == -1)
 			e->hit = 1;
 	}
 }

@@ -48,7 +48,6 @@ int		main(int ac, char **av)
 	if (ac == 2)
 	{
 		e->filename = av[1];
-	//	parse_map(e);
 	}
 	map(e);
 	init_key(e);
@@ -58,7 +57,6 @@ int		main(int ac, char **av)
 	e->data = mlx_get_data_addr(e->img, &e->bpp, &e->size, &e->endian);
 	tex_init(e);
 	mlx_loop_hook(e->mlx, expose, e);
-//	mlx_expose_hook(e->win, expose, e);
 	mlx_hook(e->win, 2, (1L << 0), key_press, e);
 	mlx_hook(e->win, 3, (1L << 1), key_release, e);
 	mlx_hook(e->win, 17, 3, exit_win, e);

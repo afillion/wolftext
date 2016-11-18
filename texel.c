@@ -9,10 +9,6 @@ void	put_xpm_pixel_to_image(t_env *e, t_col *col, int x, int y)
 
 void	get_xpm_pixel(t_env *e, t_col *col, int x, int y)
 {
-//	if (x > 64)
-//		x = x % 64;
-//	if (y > 64)
-//		y = y % 64;
 	if (e->tex_id == 9)
 	{
 		if (x > 900)
@@ -42,7 +38,8 @@ int		load_texture(t_env *e, t_tex *image, char *file)
 	}
 	if (!(image->img = mlx_xpm_file_to_image(e->mlx, file, &w, &h)))
 		return (-1);
-	image->data = mlx_get_data_addr(image->img, &image->bpp, &image->size, &image->endian);
+	image->data = mlx_get_data_addr(image->img,
+			&image->bpp, &image->size, &image->endian);
 	return (0);
 }
 
