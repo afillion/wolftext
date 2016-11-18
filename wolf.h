@@ -39,7 +39,7 @@ typedef struct	s_env
 {
 	double		x;
 	double		y;
-	struct s_texture	tex_tab[10];
+	struct s_texture	tex_tab[11];
 	void		*mlx;
 	void		*win;
 	void		*img;
@@ -83,7 +83,7 @@ typedef struct	s_env
 	double		h_cam;
 	int			line;
 	int			col;
-	int			**world_map;
+	int			world_map[22][22];
 	char		*filename;
 	int			forward;
 	int			left;

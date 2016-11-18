@@ -45,24 +45,18 @@ void	split_map(t_env *e, char *map)
 {
 	int		i;
 	int		j;
-	int		m;
-	int		f;
 	char	**split;
 	char	**new;
 
-	m = 0;
-	f = 0;
 	i = 0;
 	j = 0;
 	split = ft_strsplit(map, '\n');
 	printf("split ADDR= %p\n", split);
 	e->world_map = (int**)malloc(sizeof(int*) * e->line);
-	m++;
 	while (split[i])
 	{
 		j = 0;
 		e->world_map[i] = (int*)malloc(sizeof(int) * count_word(split[i], ' '));
-		m++;
 		if (e->col < count_word(split[i], ' '))
 			e->col = count_word(split[i], ' ');
 		new = ft_strsplit(split[i], ' ');
@@ -90,6 +84,7 @@ void	parse_map(t_env *e)
 
 	line = NULL;
 	map = ft_strnew(0);
+	printf("map ADDR=[%p]\n", map);
 	fd = open(e->filename, O_RDONLY);
 	//if fd < 1 go ft_exit
 	while (get_next_line(fd, &line) > 0)

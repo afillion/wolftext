@@ -1,7 +1,7 @@
 /* XPM */
 static char * trees_xpm[] = {
 "64 64 2897 2",
-"  	c #0B3F00",
+"  	c None",
 ". 	c #337828",
 "+ 	c #0E6409",
 "@ 	c #004B00",

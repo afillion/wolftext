@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <math.h>
 
+int		exit_win(t_env *e)
+{
+	exit(0);
+	(void)e;
+}
+
 int		expose(t_env *e)
 {
 	ray_cast(e);
@@ -40,9 +46,9 @@ int		main(int ac, char **av)
 	if (ac == 2)
 	{
 		e->filename = av[1];
-		parse_map(e);
+	//	parse_map(e);
 	}
-	//map(e);
+	map(e);
 	init_key(e);
 	e->mlx = mlx_init();
 	e->win = mlx_new_window(e->mlx, MAP_W, MAP_H, "Wolf3d");
@@ -51,8 +57,9 @@ int		main(int ac, char **av)
 	tex_init(e);
 	mlx_loop_hook(e->mlx, expose, e);
 //	mlx_expose_hook(e->win, expose, e);
-	mlx_hook(e->win, 2, (1L << 0), &key_press, e);
-	mlx_hook(e->win, 3, (1L << 1), &key_release, e);
+	mlx_hook(e->win, 2, (1L << 0), key_press, e);
+	mlx_hook(e->win, 3, (1L << 1), key_release, e);
+	mlx_hook(e->win, 17, 3, exit_win, e);
 	mlx_loop(e->mlx);
 	return (0);
 }

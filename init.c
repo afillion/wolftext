@@ -17,7 +17,7 @@ void	init_ray(t_env *e)
 
 void	init_struct(t_env *e)
 {
-	e->pos_x = 22;
+	e->pos_x = 20;
 	e->pos_y = 12;
 	e->dir_x = -1;
 	e->dir_y = 0;

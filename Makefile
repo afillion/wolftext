@@ -11,7 +11,6 @@ CFLAGS = -Wall -Wextra -Werror -g
 LDFLAGS = -L libft -lft -L/usr/local/lib -I/usr/local/include -lmlx -framework OpenGL -framework AppKit
 
 SRC = main.c \
-	  parse.c \
 	  ray_cast.c \
 	  put_pixel_to_img.c \
 	  key.c \
