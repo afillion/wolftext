@@ -20,6 +20,9 @@ SRC = main.c \
 	  init.c \
 	  texel.c \
 	  floor.c \
+	  textured_wolf.c \
+	  untextured_wolf.c \
+	  shadow.c \
 	  map.c
 
 OBJ = $(SRC:.c=.o)

@@ -16,7 +16,7 @@ void	color(t_env *e, double y)
 	t_col col;
 
 	y = 1;
-	//e->color = 0xFFFFFF;
+	e->color = 0xFFFFFF;
 	if (e->world_map[e->map_x][e->map_y] == 1)
 	{
 		e->tex_id = 1;
@@ -77,10 +77,10 @@ void	color(t_env *e, double y)
 		get_xpm_pixel(e, &col, e->tex_x, e->tex_y);
 		put_xpm_pixel_to_image(e, &col, e->x, e->y);
 	}
-//	if (e->side == 1)
-//		e->color = e->color / 2;
-//	if (y < e->start)
-//		e->color = 0x00FFFF;
-//	if (y > e->end)
-//		e->color = 0xFFCC99;
+	if (e->side == 1)
+		e->color = e->color / 2;
+	if (y < e->start)
+		e->color = 0x00FFFF;
+	if (y > e->end)
+		e->color = 0xFFCC99;
 }

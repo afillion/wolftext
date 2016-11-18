@@ -57,7 +57,7 @@ int		tex_init(t_env *e)
 	load_texture(e, &e->tex_tab[6], "./Texture/redbrick.xpm");
 	load_texture(e, &e->tex_tab[7], "./Texture/wallbrick.xpm");
 	load_texture(e, &e->tex_tab[8], "./Texture/wood.xpm");
-	load_texture(e, &e->tex_tab[9], "./Texture/xpm_texts/skybox.xpm");
+	load_texture(e, &e->tex_tab[9], "./Texture/xpm_texts/sky.xpm");
 	load_texture(e, &e->tex_tab[10], "./Texture/xpm_texts/housedoor.xpm");
 	return (0);
 }

@@ -13,10 +13,19 @@ void	init_ray(t_env *e)
 	e->y_a = sqrt(1 + (e->ray_dir_x * e->ray_dir_x)
 			/ (e->ray_dir_y * e->ray_dir_y));
 	e->hit = 0;
+	if (e->textured == 0)
+		e->move_speed = 0.15;
+	else
+		e->move_speed = 0.30;
+	if (e->textured == 0)
+		e->rot_speed = 0.14;
+	else
+		e->rot_speed = 0.21;
 }
 
 void	init_struct(t_env *e)
 {
+	e->textured = 1;
 	e->pos_x = 20;
 	e->pos_y = 12;
 	e->dir_x = -1;
@@ -25,8 +34,6 @@ void	init_struct(t_env *e)
 	e->plane_y = 0.66;
 	e->time = 0;
 	e->old_time = 0;
-	e->move_speed = 0.15;
-	e->rot_speed = 0.07;
 	e->line = 0;
 	e->col = 0;
 }

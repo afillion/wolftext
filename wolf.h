@@ -37,6 +37,7 @@ typedef struct s_texture
 
 typedef struct	s_env
 {
+	int			textured;
 	double		x;
 	double		y;
 	struct s_texture	tex_tab[11];
@@ -141,5 +142,8 @@ int				load_texture(t_env *e, t_tex *image, char *file);
 int				tex_init(t_env *e);
 void			ft_floor(t_env *e);
 void			map(t_env *e);
+void			textured(t_env *e);
+void			untextured(t_env *e);
+void			shadow_effect(t_env *e, t_col *col);
 
 #endif
