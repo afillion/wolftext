@@ -39,3 +39,21 @@ void	right(t_env *e)
 			[(int)(e->pos_y - e->dir_x * e->move_speed)] <= 0)
 		e->pos_y -= e->dir_x * e->move_speed;
 }
+
+void	run(t_env *e)
+{
+	if (e->run == 1)
+	{
+		if (e->textured == 0)
+			e->move_speed = 0.70;
+		else
+			e->move_speed = 0.85;
+	}
+	else
+	{
+		if (e->textured == 0)
+			e->move_speed = 0.15;
+		else
+			e->move_speed = 0.30;
+	}
+}

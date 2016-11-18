@@ -26,6 +26,7 @@ void	init_ray(t_env *e)
 void	init_struct(t_env *e)
 {
 	e->textured = 1;
+	e->run = 0;
 	e->pos_x = 20;
 	e->pos_y = 12;
 	e->dir_x = -1;

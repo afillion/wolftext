@@ -2,6 +2,7 @@
 
 void	ray_cast(t_env *e)
 {
+	check_teleport(e);
 	e->x = 0;
 	while (e->x < MAP_W)
 	{

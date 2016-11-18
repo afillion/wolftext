@@ -27,8 +27,11 @@ void	left_rotate(t_env *e)
 
 void	updown_view(t_env *e)
 {
-	if (e->up == 1)
-		e->updown = 1.5;
-	if (e->down == 1)
-		e->updown = 3;
+	if (e->textured == 0)
+	{
+		if (e->up == 1)
+			e->updown = 1.5;
+		if (e->down == 1)
+			e->updown = 3;
+	}
 }

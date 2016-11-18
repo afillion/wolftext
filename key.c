@@ -45,6 +45,8 @@ int		key_press(int keycode, t_env *e)
 		e->textured = 1;
 	if (keycode == 19) // 2
 		e->textured = 0;
+	if (keycode == 12)
+		e->run = 1;
 	if (keycode == FORWARD)
 		e->forward = 1;
 	else if (keycode == BACKWARD)
@@ -66,6 +68,8 @@ int		key_press(int keycode, t_env *e)
 
 int		key_release(int keycode, t_env *e)
 {
+	if (keycode == 12)
+		e->run = 0;
 	if (keycode == FORWARD)
 		e->forward = 0;
 	else if (keycode == BACKWARD)

@@ -23,6 +23,7 @@ SRC = main.c \
 	  textured_wolf.c \
 	  untextured_wolf.c \
 	  shadow.c \
+	  teleport.c \
 	  map.c
 
 OBJ = $(SRC:.c=.o)

@@ -37,6 +37,7 @@ typedef struct s_texture
 
 typedef struct	s_env
 {
+	int			run;
 	int			textured;
 	double		x;
 	double		y;
@@ -145,5 +146,9 @@ void			map(t_env *e);
 void			textured(t_env *e);
 void			untextured(t_env *e);
 void			shadow_effect(t_env *e, t_col *col);
+void			map(t_env *e);
+void			map2(t_env *e);
+void			check_teleport(t_env *e);
+void			run(t_env *e);
 
 #endif

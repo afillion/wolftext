@@ -17,6 +17,8 @@ int		expose(t_env *e)
 
 int		key_hook(t_env *e)
 {
+	if (e->run == 1)
+		run(e);
 	if (e->forward == 1)
 		forward(e);
 	if (e->backward == 1)
